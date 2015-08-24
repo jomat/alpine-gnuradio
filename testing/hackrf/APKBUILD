@@ -1,0 +1,46 @@
+# Contributor: Johannes Matheis <jomat+alpinebuild@jmt.gr>
+# Maintainer:
+pkgname=hackrf
+pkgver=2015.07.2
+pkgrel=0
+pkgdesc="Driver for HackRF, allowing general purpose software defined radio (SDR)"
+url="https://github.com/mossmann/hackrf"
+arch="all"
+license="GPL"
+depends=""
+depends_dev=""
+makedepends="$depends_dev libusb-dev"
+install=""
+subpackages="$pkgname-dev"
+source="$url/releases/download/v${pkgver}/$pkgname-$pkgver.tar.xz"
+
+_builddir=$srcdir/$pkgname-$pkgver/host
+prepare() {
+	local i
+	cd "$_builddir"
+	for i in $source; do
+		case $i in
+		*.patch) msg $i; patch -p1 -i "$srcdir"/$i || return 1;;
+		esac
+	done
+}
+
+build() {
+	cd "$_builddir"
+	mkdir build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+		..
+	make
+
+}
+
+package() {
+	cd "$_builddir"
+	cd build
+	make DESTDIR="$pkgdir" install
+}
+
+md5sums="67595d2dad1c299138baf9a85ec37341  hackrf-2015.07.2.tar.xz"
+sha256sums="5e3d9c36928b88cdbc0d66ee54e24e8682972dba478abfca0e31069515b870b6  hackrf-2015.07.2.tar.xz"
+sha512sums="a4f7b7800ece9b260d5c8c374f5544aa55cd2e97e10c6a0b33cf476e2ad4811321ffb1308d9dfb2168b2624cd3af616d1c314ad86bcd6f4c3fd0897319fa2cbd  hackrf-2015.07.2.tar.xz"
