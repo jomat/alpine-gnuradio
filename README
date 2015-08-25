@@ -1,0 +1,18 @@
+This is an attempt to get gnuradio & friends up and running on alpine linux.
+
+Current TODOs:
+  - Check licenses
+  - package wx for python to ENABLE_GR_WXGUI
+  - check all the dependencies
+  - verify contents of all the packages
+  - check if mode_t.patch is ok, submit it upstream
+  - package py-cheetah
+
+
+Dependency/build order:
+  1. py-cheetah, qwt
+  2. gnuradio
+  3. hackrf
+  4. gr-osmosdr
+  5. gqrx
+
