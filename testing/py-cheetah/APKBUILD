@@ -1,7 +1,7 @@
 # Contributor: Johannes Matheis <jomat+alpinebuild@jmt.gr>
 # Maintainer:
 pkgname=py-cheetah
-pkgver=2.4.4
+pkgver=3.0.0
 pkgrel=0
 pkgdesc="A Python-powered template engine and code generator"
 url="http://www.cheetahtemplate.org"
@@ -11,10 +11,10 @@ depends=""
 depends_dev=""
 makedepends="$depends_dev"
 install=""
-subpackages="$pkgname-dev $pkgname-doc"
-source="http://pypi.python.org/packages/source/C/Cheetah/Cheetah-${pkgver}.tar.gz"
+subpackages=""
+source="${pkgname}-${pkgver}.tar.gz::https://github.com/CheetahTemplate3/cheetah3/archive/${pkgver}.tar.gz"
 
-_builddir=$srcdir/Cheetah-$pkgver
+_builddir=$srcdir/cheetah3-$pkgver
 prepare() {
 	local i
 	cd "$_builddir"
@@ -35,6 +35,4 @@ package() {
 	python2 setup.py install --root="${pkgdir}" || return 1
 }
 
-md5sums="853917116e731afbc8c8a43c37e6ddba  Cheetah-2.4.4.tar.gz"
-sha256sums="be308229f0c1e5e5af4f27d7ee06d90bb19e6af3059794e5fd536a6f29a9b550  Cheetah-2.4.4.tar.gz"
-sha512sums="11b8cbf7d71789d6ae83596b133ddbe0bf1ccf2bca4c59562e7cd1d9bb75fa9d3208c0021d7d77edafdb03fd399cf1a26c003267fbffb94f27bf4457b0f9234c  Cheetah-2.4.4.tar.gz"
+sha512sums="8308b99b32e50e6f6600541a906b97ad4052574561ed24fe19836afc75c08eceaa9d3d5015f309d4cad9317fa61181a23c2e392a4ea09e4d1de0f9f041848587  py-cheetah-3.0.0.tar.gz"
