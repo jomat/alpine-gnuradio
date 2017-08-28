@@ -2,7 +2,8 @@
 # Maintainer: Johannes Matheis <jomat+alpinebuild@jmt.gr>
 pkgname=gr-iio
 pkgver=0.2
-pkgrel=0
+gitcommit=54c86a517edf7933f4ce5e87c8c57d243c85b3ba
+pkgrel=1
 pkgdesc="IIO blocks for GNU Radio"
 url="https://github.com/analogdevicesinc/gr-iio"
 arch="all"
@@ -11,8 +12,8 @@ depends="libad9361-iio-dev"
 makedepends=""
 install=""
 subpackages="$pkgname-dev"
-source="$pkgname-$pkgver.tar.gz::https://github.com/analogdevicesinc/gr-iio/archive/v$pkgver.tar.gz"
-builddir="$srcdir/$pkgname-$pkgver"
+source="https://github.com/analogdevicesinc/gr-iio/archive/$gitcommit.tar.gz"
+builddir="$srcdir/$pkgname-$gitcommit"
 
 build() {
 	cd "$builddir"
@@ -29,4 +30,4 @@ package() {
 	make DESTDIR="$pkgdir" install
 }
 
-sha512sums="9978b2e5124331adba927a10fffb7cda8a7f797d350b3777181ce987fda5323e773fe80de2258b1f5402f98d3eff66061d8d05d36817084272b1652767744533  gr-iio-0.2.tar.gz"
+sha512sums="caadd8755aa1fc5cfd8f3abdf8f21945824f99a9e192c463944406281cbbd180f6dfb70aa8a8e01db943024c15b8a3b3205924f3753732f5995ad0f5a8aa2cb8  54c86a517edf7933f4ce5e87c8c57d243c85b3ba.tar.gz"
