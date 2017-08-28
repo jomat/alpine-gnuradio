@@ -1,7 +1,7 @@
 # Contributor: Johannes Matheis <jomat+alpinebuild@jmt.gr>
 # Maintainer:
 pkgname=hackrf
-pkgver=2015.07.2
+pkgver=2017.02.1
 pkgrel=0
 pkgdesc="Driver for HackRF, allowing general purpose software defined radio (SDR)"
 url="https://github.com/mossmann/hackrf"
@@ -41,6 +41,4 @@ package() {
 	make DESTDIR="$pkgdir" install
 }
 
-md5sums="67595d2dad1c299138baf9a85ec37341  hackrf-2015.07.2.tar.xz"
-sha256sums="5e3d9c36928b88cdbc0d66ee54e24e8682972dba478abfca0e31069515b870b6  hackrf-2015.07.2.tar.xz"
-sha512sums="a4f7b7800ece9b260d5c8c374f5544aa55cd2e97e10c6a0b33cf476e2ad4811321ffb1308d9dfb2168b2624cd3af616d1c314ad86bcd6f4c3fd0897319fa2cbd  hackrf-2015.07.2.tar.xz"
+sha512sums="7cd6ad9aa8fef8afed41c48a3358bff18c6b2a9a112b13daabda87726e0e3ca4cf1e0c0c6ff9689bdd49f854e2e5887a84ccd7975abef43a43b75ecf8a5236ce  hackrf-2017.02.1.tar.xz"
