@@ -1,0 +1,33 @@
+# Contributor: Johannes Matheis <jomat+alpinebuild@jmt.gr>
+# Maintainer: Johannes Matheis <jomat+alpinebuild@jmt.gr>
+pkgname=libiio
+pkgver=0.10
+pkgrel=0
+pkgdesc="Library for interfacing with IIO devices"
+url="https://github.com/analogdevicesinc/libiio"
+arch="all"
+license="GPL"
+depends=""
+makedepends=""
+install=""
+subpackages="$pkgname-dev"
+source="$pkgname-$pkgver.tar.gz::https://github.com/analogdevicesinc/libiio/archive/v0.10.tar.gz"
+builddir="$srcdir/$pkgname-$pkgver"
+
+build() {
+	PATH=$PATH:/usr/lib/qt5/bin/
+	cd "$builddir"
+	mkdir build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+		..
+	make
+}
+
+package() {
+	cd "$builddir"
+	cd build
+	make DESTDIR="$pkgdir" install
+}
+
+sha512sums="b1859e1e0169a6b5d674b1174fa3329d79c596574aa72f972f966e6c49d3e375804ac41ad71441612392cfc20a430153ff2817fcca67aba8515a24e37d0a3219  libiio-0.10.tar.gz"
