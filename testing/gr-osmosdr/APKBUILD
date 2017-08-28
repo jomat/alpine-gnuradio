@@ -8,7 +8,7 @@ url="http://sdr.osmocom.org"
 arch="all"
 license="GPL"
 depends=""
-depends_dev=""
+depends_dev="gnuradio-dev hackrf-dev"
 makedepends="$depends_dev"
 install=""
 subpackages="$pkgname-dev"
@@ -41,6 +41,4 @@ package() {
 	make DESTDIR="${pkgdir}" install
 }
 
-md5sums="da9733eee05e1409beb1c606c2db4521  gr-osmosdr-0.1.4.tar.xz"
-sha256sums="074dd3ad68c187948f05c33e025629acd4c8b62b5d1d1c212e3dabd8f080b16a  gr-osmosdr-0.1.4.tar.xz"
-sha512sums="930a7f6065fba709fb770fd373f0fe7eba13abf09e49f6e839718d547ce69176d93d89d1b037ee3f0cdffda7060ac6c9ff4023dc835ec50ef456d51d383046ab  gr-osmosdr-0.1.4.tar.xz"
+sha512sums="ca2a366fe7e3391dbaf9c98cf8abb6dde7cf7e89e7bcc8f492dc5eb2e5e9ffd842ccd39d0f65812962a9fa46e3f7110c7bf2790b9c4ca4bc9e33778696370636  gr-osmosdr-0.1.4.tar.xz"
