@@ -1,0 +1,32 @@
+# Contributor: Johannes Matheis <jomat+alpinebuild@jmt.gr>
+# Maintainer: Johannes Matheis <jomat+alpinebuild@jmt.gr>
+pkgname=gr-iio
+pkgver=0.2
+pkgrel=0
+pkgdesc="IIO blocks for GNU Radio"
+url="https://github.com/analogdevicesinc/gr-iio"
+arch="all"
+license="GPL"
+depends="libad9361-iio-dev"
+makedepends=""
+install=""
+subpackages="$pkgname-dev"
+source="$pkgname-$pkgver.tar.gz::https://github.com/analogdevicesinc/gr-iio/archive/v$pkgver.tar.gz"
+builddir="$srcdir/$pkgname-$pkgver"
+
+build() {
+	cd "$builddir"
+	mkdir build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+		..
+	make
+}
+
+package() {
+	cd "$builddir"
+	cd build
+	make DESTDIR="$pkgdir" install
+}
+
+sha512sums="9978b2e5124331adba927a10fffb7cda8a7f797d350b3777181ce987fda5323e773fe80de2258b1f5402f98d3eff66061d8d05d36817084272b1652767744533  gr-iio-0.2.tar.gz"
