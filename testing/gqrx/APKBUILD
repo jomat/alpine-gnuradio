@@ -1,17 +1,17 @@
 # Contributor: Johannes Matheis <jomat+alpinebuild@jmt.gr>
 # Maintainer:
 pkgname=gqrx
-pkgver=2.3.2
+pkgver=2.7
 pkgrel=0
 pkgdesc="Software defined radio receiver powered by GNU Radio"
 url="http://gqrx.dk/"
 arch="all"
 license="GPL"
 depends=""
-depends_dev=""
-makedepends="$depends_dev gr-osmosdr-dev"
+depends_dev="qt5-qtbase-dev gr-osmosdr-dev"
+makedepends="$depends_dev"
 install=""
-subpackages="$pkgname-dev $pkgname-doc"
+subpackages=""
 source="$pkgname-$pkgver.tar.gz::https://github.com/csete/gqrx/archive/v${pkgver}.tar.gz"
 
 _builddir=$srcdir/$pkgname-$pkgver
@@ -26,6 +26,7 @@ prepare() {
 }
 
 build() {
+	PATH=$PATH:/usr/lib/qt5/bin/
 	cd "$_builddir"
 	mkdir build
 	cd build
@@ -40,6 +41,4 @@ package() {
 	make install INSTALL_ROOT="$pkgdir"
 }
 
-md5sums="f77dd4d3ee02bd142be5f17a926c21c7  gqrx-2.3.2.tar.gz"
-sha256sums="2748ee14491dbfb5821efba32300124b5a2b0aabc810cdfda91e5f64bd3502cf  gqrx-2.3.2.tar.gz"
-sha512sums="53b271a7b053ebf877152ddd4d6d96e2ae864c8a85a66f5dca5ce670301616fec770e0c2bb2352234fc8566d05679c8c3ef147e62ea5393635a6f57724fd8da0  gqrx-2.3.2.tar.gz"
+sha512sums="931f4751b2437ab2286a436ed842cd51203d69c7d6edf0c0125fcb1d9943a028175d8ae70dd62eb4d2f935e97419dc990537d90e2bf50c5d1924282fe0f5531d  gqrx-2.7.tar.gz"
