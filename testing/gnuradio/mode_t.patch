@@ -1,13 +1,13 @@
---- ./gnuradio-runtime/include/gnuradio/logger.h.in.orig	2015-08-23 14:17:58.418639079 +0000
-+++ ./gnuradio-runtime/include/gnuradio/logger.h.in	2015-08-23 15:08:45.012886643 +0000
+--- ./gnuradio-runtime/include/gnuradio/logger.h.in.orig
++++ ./gnuradio-runtime/include/gnuradio/logger.h.in
 @@ -42,8 +42,8 @@
- /* #undef HAVE_LOG4CPP */
+ #cmakedefine HAVE_LOG4CPP
  #endif
  
 -#ifdef _MSC_VER
 -typedef unsigned short mode_t;
 +#if !defined(__DEFINED_mode_t)
 +typedef unsigned mode_t;
+ #else
+ #include <sys/types.h>
  #endif
- 
- #include <gnuradio/api.h>

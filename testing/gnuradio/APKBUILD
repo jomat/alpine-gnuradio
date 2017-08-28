@@ -1,14 +1,14 @@
 # Contributor: Johannes Matheis <jomat+alpinebuild@jmt.gr>
 # Maintainer:
 pkgname=gnuradio
-pkgver=3.7.8
+pkgver=3.7.11
 pkgrel=0
 pkgdesc="General purpose DSP and SDR toolkit."
 url="http://gnuradio.org"
 arch="all"
 license="GPL"
 depends=""
-depends_dev="py-lxml py-gtk py-numpy swig py-qt qwt-dev fftw-dev"
+depends_dev="py-lxml py-gtk py-numpy swig py-qt@testing qwt-dev fftw-dev boost-dev"
 makedepends="$depends_dev cmake cppunit"
 install=""
 subpackages="$pkgname-dev $pkgname-doc"
@@ -52,9 +52,5 @@ package() {
 	make DESTDIR="$pkgdir" install
 }
 
-md5sums="afc83b06136537071397007c3243c02a  gnuradio-3.7.8.tar.gz
-d5ed072ca597406bf467d1e94895b64d  mode_t.patch"
-sha256sums="fe19cb54b5d77fb76dde61d5cf184c6dee7066779b45c51676bae6e6d0cd4172  gnuradio-3.7.8.tar.gz
-f8f5931414f67af5af1c84d179b3e60e0d8aa441820a28f1f07316b2a11a8df5  mode_t.patch"
-sha512sums="2a69101acf8b1ed8cc4791de2961b4d8a4baf50a84e5514ba8f29e300829228daa50863dda8434c1703829412ec6fb2f25560d851b4a39cc687cba0646e1a7d9  gnuradio-3.7.8.tar.gz
-77b74c44a477ee9756ea4e95121db917a31c03fe53d30c1b8825c3a4fed5559243639654c692ad2d2b68bd2d0edc5eec2d734bce9e4bbdaed72aa06689e7bd52  mode_t.patch"
+sha512sums="a3b44e04e63056ad5238ddbda7967ebaf5802d2ed7e24649190bde67a533b50780ec1260dc7710c5388c966b71e153d3d21468bbfee4529c62ac5b89b589dd14  gnuradio-3.7.11.tar.gz
+802d50219b800e1563b595e2337acef331b0b8b313e210e77533ceeba9d57220fcbb0d955af14cb7c952c95e95a717d13f922f6d7533fc8ca1b68e73d28abb53  mode_t.patch"
