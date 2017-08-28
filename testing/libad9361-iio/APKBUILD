@@ -1,0 +1,34 @@
+# Contributor: Johannes Matheis <jomat+alpinebuild@jmt.gr>
+# Maintainer: Johannes Matheis <jomat+alpinebuild@jmt.gr>
+pkgname=libad9361-iio
+pkgver=0.0
+gitcommit=6027674bc2ef400147f1607d0252e5347163f2f7
+pkgrel=0
+pkgdesc="Library which manages multi-chip sync, on platforms (FMCOMMS5) with multiple AD9361 devices"
+url="https://github.com/analogdevicesinc/libad9361-iio"
+arch="all"
+license="GPL"
+depends=""
+makedepends=""
+install=""
+subpackages="$pkgname-dev"
+source="https://github.com/analogdevicesinc/libad9361-iio/archive/$gitcommit.tar.gz"
+builddir="$srcdir/$pkgname-$gitcommit"
+
+build() {
+	PATH=$PATH:/usr/lib/qt5/bin/
+	cd "$builddir"
+	mkdir build
+	cd build
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+		..
+	make
+}
+
+package() {
+	cd "$builddir"
+	cd build
+	make DESTDIR="$pkgdir" install
+}
+
+sha512sums="5005ede072950fe9e8697be5206792d515d2733e04aaaf1ff6ad2833f275145f4a8c9a139b104d99d76b79ad98a0d8bb593d2265168f6c6d97fa9a0de0ba7202  6027674bc2ef400147f1607d0252e5347163f2f7.tar.gz"
