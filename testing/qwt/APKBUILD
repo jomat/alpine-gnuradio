@@ -1,7 +1,7 @@
 # Contributor: Johannes Matheis <jomat+alpinebuild@jmt.gr>
 # Maintainer:
 pkgname=qwt
-pkgver=6.1.2
+pkgver=6.1.3
 pkgrel=0
 pkgdesc="Qt Widgets for Technical Applications"
 url="http://qwt.sourceforge.net/"
@@ -9,7 +9,7 @@ arch="all"
 license="custom"
 depends=""
 depends_dev=""
-makedepends="$depends_dev"
+makedepends="$depends_dev qt-dev"
 install=""
 subpackages="$pkgname-dev $pkgname-doc"
 source="http://downloads.sourceforge.net/${pkgname}/$pkgname-$pkgver.tar.bz2
@@ -39,9 +39,5 @@ package() {
 	make INSTALL_ROOT=${pkgdir} install
 }
 
-md5sums="9c88db1774fa7e3045af063bbde44d7d  qwt-6.1.2.tar.bz2
-e2011a1b07fd7719b7932412eaa83759  qwtconfig.pri"
-sha256sums="2b08f18d1d3970e7c3c6096d850f17aea6b54459389731d3ce715d193e243d0c  qwt-6.1.2.tar.bz2
-cba37474775cd35c1ce0c02311933e07fcdb448fbd179663cf4f1b84c34c6164  qwtconfig.pri"
-sha512sums="ddaf265890e493554639deae8b3ba3a1673bd6bcb4a7c47931d10aaab550646d103b28dccd3c2e4fdacd56a7963837c25ab02e27c71f891fee1801bcd45d54c0  qwt-6.1.2.tar.bz2
+sha512sums="d4a73e9e7ddcb7c16c508920a298784935be2eddc8f7585993d9fffe1bb01e1787a0d5d7ea4f220398b94ea2b211a19009dccaeadce56a84410357124bcb051a  qwt-6.1.3.tar.bz2
 6ac513e619e2cde467f2d22afefed9fb6c6c1e44b3c732165bc1f68677cee605e8d873a64bae5bef37472eeaf603ba190e3f27e922e8fa7fb762341decbd9630  qwtconfig.pri"
