@@ -2,7 +2,7 @@
 # Maintainer:
 pkgname=gqrx
 pkgver=2.7
-pkgrel=0
+pkgrel=1
 pkgdesc="Software defined radio receiver powered by GNU Radio"
 url="http://gqrx.dk/"
 arch="all"
@@ -31,6 +31,7 @@ build() {
 	mkdir build
 	cd build
 	qmake PREFIX=/usr/ \
+		AUDIO_BACKEND=Gr-audio \
 		..
 	make
 }
