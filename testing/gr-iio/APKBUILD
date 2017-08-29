@@ -3,7 +3,7 @@
 pkgname=gr-iio
 pkgver=0.2
 gitcommit=54c86a517edf7933f4ce5e87c8c57d243c85b3ba
-pkgrel=1
+pkgrel=2
 pkgdesc="IIO blocks for GNU Radio"
 url="https://github.com/analogdevicesinc/gr-iio"
 arch="all"
